@@ -1,0 +1,12 @@
+﻿@model Springboard.Models.AspNetUser
+@if (Model != null)
+{
+    if (Model.Role.Equals("S"))
+    {
+        <div>Seeker</div>
+    }
+    else if (Model.Role.Equals("P"))
+    {
+        <div>Poster</div>
+    }
+}
