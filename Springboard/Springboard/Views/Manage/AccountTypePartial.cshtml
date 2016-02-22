@@ -1,11 +1,12 @@
-﻿@model Springboard.Models.AspNetUser
+﻿@using Springboard.Models
+@model Springboard.Models.ApplicationUser
 @if (Model != null)
 {
-    if (Model.Role.Equals("S"))
+    if (Model.Role.Equals(Role.Seeker))
     {
-        <div>Seeker</div>
+        @Html.ActionLink("Manage", "Index", "Manage")
     }
-    else if (Model.Role.Equals("P"))
+    else if (Model.Role.Equals(Role.Poster))
     {
         <div>Poster</div>
     }

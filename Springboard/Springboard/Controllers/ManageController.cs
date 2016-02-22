@@ -324,9 +324,10 @@ namespace Springboard.Controllers
         //GET: /Shared/AccountTypePartial
         public ActionResult AccountTypePartial()
         {
-            DatabaseModel model = new DatabaseModel();
+            ApplicationDbContext model = new ApplicationDbContext();
+            //DatabaseModel model = new DatabaseModel();
             string id = User.Identity.GetUserId();
-            var user = (from s in model.AspNetUsers
+            var user = (from s in model.Users
                         where s.Id == id
                         select s).FirstOrDefault();
             return PartialView("AccountTypePartial", user);
