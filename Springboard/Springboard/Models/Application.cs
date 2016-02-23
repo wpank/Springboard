@@ -9,14 +9,8 @@ namespace Springboard.Models
     [Table("Application")]
     public partial class Application
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
-
-        [Required]
-        [StringLength(128)]
-        public string SeekerId { get; set; }
-
-        public int JobPostingId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public string Id { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime DateOpen { get; set; }

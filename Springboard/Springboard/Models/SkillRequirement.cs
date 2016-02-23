@@ -14,8 +14,8 @@ namespace Springboard.Models
             JobPostings = new HashSet<JobPosting>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public string Id { get; set; }
 
         public int? AI { get; set; }
 

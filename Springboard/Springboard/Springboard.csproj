@@ -200,12 +200,33 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SeekerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201602230054551_Initial.cs" />
     <Compile Include="Migrations\201602230054551_Initial.Designer.cs">
       <DependentUpon>201602230054551_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602230154390_SeekerAccounts.cs" />
+    <Compile Include="Migrations\201602230154390_SeekerAccounts.Designer.cs">
+      <DependentUpon>201602230154390_SeekerAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602230159589_SeekerAccountModification.cs" />
+    <Compile Include="Migrations\201602230159589_SeekerAccountModification.Designer.cs">
+      <DependentUpon>201602230159589_SeekerAccountModification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602230201307_SeekerAccountId.cs" />
+    <Compile Include="Migrations\201602230201307_SeekerAccountId.Designer.cs">
+      <DependentUpon>201602230201307_SeekerAccountId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602230203075_SeekerAccountNulls.cs" />
+    <Compile Include="Migrations\201602230203075_SeekerAccountNulls.Designer.cs">
+      <DependentUpon>201602230203075_SeekerAccountNulls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602230216340_StringKey.cs" />
+    <Compile Include="Migrations\201602230216340_StringKey.Designer.cs">
+      <DependentUpon>201602230216340_StringKey.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -285,10 +306,26 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Manage\AccountTypePartial.cshtml" />
+    <Content Include="Views\Seeker\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">
       <DependentUpon>201602230054551_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602230154390_SeekerAccounts.resx">
+      <DependentUpon>201602230154390_SeekerAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602230159589_SeekerAccountModification.resx">
+      <DependentUpon>201602230159589_SeekerAccountModification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602230201307_SeekerAccountId.resx">
+      <DependentUpon>201602230201307_SeekerAccountId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602230203075_SeekerAccountNulls.resx">
+      <DependentUpon>201602230203075_SeekerAccountNulls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602230216340_StringKey.resx">
+      <DependentUpon>201602230216340_StringKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

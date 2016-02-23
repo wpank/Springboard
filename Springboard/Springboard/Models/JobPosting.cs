@@ -15,8 +15,8 @@ namespace Springboard.Models
             Applications = new HashSet<Application>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public string Id { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -25,14 +25,6 @@ namespace Springboard.Models
         [Column(TypeName = "text")]
         [Required]
         public string JobDescription { get; set; }
-
-        [Required]
-        [StringLength(128)]
-        public string PosterId { get; set; }
-
-        public int CultureId { get; set; }
-
-        public int SkillRequirementsId { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }

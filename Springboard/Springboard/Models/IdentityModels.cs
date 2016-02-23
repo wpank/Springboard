@@ -17,6 +17,7 @@ namespace Springboard.Models
     public class ApplicationUser : IdentityUser
     {
         public Role Role { get; set; }
+        public SeekerAccount SeekerAccount { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
