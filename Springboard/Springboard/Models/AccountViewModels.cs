@@ -79,6 +79,10 @@ namespace Springboard.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Account Type")]
+        public Role Role { get; set; }
     }
 
     public class ResetPasswordViewModel

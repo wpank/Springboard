@@ -35,7 +35,7 @@ namespace Springboard.Models
         }
 
         public virtual DbSet<Application> Applications { get; set; }
-        //public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        //public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Culture> Cultures { get; set; }
         public virtual DbSet<JobPosting> JobPostings { get; set; }
         public virtual DbSet<SeekerAccount> SeekerAccounts { get; set; }

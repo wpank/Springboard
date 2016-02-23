@@ -23,7 +23,7 @@ namespace Springboard.Models
 
         public bool Resolved { get; set; }
 
-        public virtual AspNetUser AspNetUser { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         public virtual JobPosting JobPosting { get; set; }
     }
