@@ -9,8 +9,8 @@ namespace Springboard.Models
     [Table("Application")]
     public partial class Application
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Guid Id { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime DateOpen { get; set; }

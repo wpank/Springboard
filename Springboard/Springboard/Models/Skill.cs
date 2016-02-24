@@ -14,8 +14,8 @@ namespace Springboard.Models
             SeekerAccounts = new HashSet<SeekerAccount>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Guid Id { get; set; }
 
         [Display(Name = "AI")]
         public int AI_Rank { get; set; }

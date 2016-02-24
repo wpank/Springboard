@@ -15,8 +15,8 @@ namespace Springboard.Models
             Applications = new HashSet<Application>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Guid Id { get; set; }
 
         [Required]
         [StringLength(50)]

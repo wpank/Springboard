@@ -228,6 +228,14 @@
     <Compile Include="Migrations\201602230216340_StringKey.Designer.cs">
       <DependentUpon>201602230216340_StringKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602240253365_GeneratedIds.cs" />
+    <Compile Include="Migrations\201602240253365_GeneratedIds.Designer.cs">
+      <DependentUpon>201602240253365_GeneratedIds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602240258016_AutoGeneration.cs" />
+    <Compile Include="Migrations\201602240258016_AutoGeneration.Designer.cs">
+      <DependentUpon>201602240258016_AutoGeneration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
@@ -326,6 +334,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602230216340_StringKey.resx">
       <DependentUpon>201602230216340_StringKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602240253365_GeneratedIds.resx">
+      <DependentUpon>201602240253365_GeneratedIds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602240258016_AutoGeneration.resx">
+      <DependentUpon>201602240258016_AutoGeneration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
