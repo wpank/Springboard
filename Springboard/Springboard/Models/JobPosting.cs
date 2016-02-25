@@ -14,7 +14,7 @@ namespace Springboard.Models
         {
             Applications = new HashSet<Application>();
         }
-
+        
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 

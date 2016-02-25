@@ -1,0 +1,123 @@
+@{
+    ViewBag.Title = "Job Posting";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+
+
+<h1>Insert into table below to add Job</h1>
+
+
+
+<asp:GridView ID="GridView1" runat="server" Width="550px" AutoGenerateColumns="false"
+    AlternatingRowStyle-BackColor="#C2D69B" HeaderStyle-BackColor="green" ShowFooter="true">
+    <Columns>
+    <asp:TemplateField HeaderText="Job ID">
+            <ItemTemplate>
+                <%# Eval("JobID") %>
+            </ItemTemplate>
+            <FooterTemplate>
+                <asp:TextBox ID="txtJobID" runat="server" />
+            </FooterTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Job Title">
+            <ItemTemplate>
+                <%# Eval("JobTitle") %>
+            </ItemTemplate>
+            <FooterTemplate>
+                <asp:TextBox ID="txtJobTitle" runat="server" />
+            </FooterTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Job Description">
+            <ItemTemplate>
+                <%# Eval("JobDescription") %>
+            </ItemTemplate>
+            <FooterTemplate>
+                <asp:TextBox ID="JobDescriptiontxt" runat="server" />
+            </FooterTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="PosterID">
+            <ItemTemplate>
+                <%# Eval("PosterID") %>
+            </ItemTemplate>
+            <FooterTemplate>
+                <asp:TextBox ID="txtPosterID" runat="server"></asp:TextBox>
+            </FooterTemplate>
+        </asp:TemplateField>
+         <asp:TemplateField HeaderText="Culture">
+            <ItemTemplate>
+                <%# Eval("CultureID") %>
+            </ItemTemplate>
+            <FooterTemplate>
+                <asp:TextBox ID="txtCulture" runat="server"></asp:TextBox>
+            </FooterTemplate>
+        </asp:TemplateField>
+         <asp:TemplateField HeaderText="Skills Required">
+            <ItemTemplate>
+                <%# Eval("Skills") %>
+            </ItemTemplate>
+            <FooterTemplate>
+                <asp:TextBox ID="txtSkills" runat="server"></asp:TextBox>
+            </FooterTemplate>
+        </asp:TemplateField>
+        
+            <asp:TemplateField>
+            <ItemTemplate>
+            </ItemTemplate>
+            <FooterTemplate>
+                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="Add" CommandName = "Footer" />
+            </FooterTemplate>
+        </asp:TemplateField>
+    </Columns>
+    <AlternatingRowStyle BackColor="#C2D69B" />
+    <EmptyDataTemplate>
+        <tr style="background-color: Green;">
+            <th scope="col">
+                Job ID
+            </th>
+            <th scope="col">
+                Job Title
+            </th>
+            <th scope="col">
+                Job Description
+            </th>
+            <th scope="col">
+                Poster ID
+            </th>
+             <th scope="col">
+                Culture
+            </th>
+             <th scope="col">
+                Skills Required
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <asp:TextBox ID="txtJobID" runat="server" />
+            </td>
+            <td>
+                <asp:TextBox ID="txtJobTitle" runat="server" />
+            </td>
+            <td>
+                <asp:TextBox ID="txtJobDescription" runat="server" />
+            </td>
+              <td>
+                <asp:TextBox ID="txtPosterID" runat="server" />
+            </td>
+              <td>
+                <asp:TextBox ID="txtCulture" runat="server" />
+            </td>
+              <td>
+                <asp:TextBox ID="txtSkills" runat="server" />
+            </td>
+            <td>
+                <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="Add" CommandName = "EmptyDataTemplate" />
+            </td>
+        </tr>
+    </EmptyDataTemplate>
+</asp:GridView>
+
+
+
+
