@@ -4,116 +4,64 @@
     ViewBag.Title = "SeekerDashboard";
 }
 
-<h2>SeekerDashboard</h2>
+<h2>Dashboard</h2>
+
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+            <p class="pull-xs-right hidden-sm-up">
+
+            </p>
+            <div class="row">
+                <div class="col-xs-3">
+                    <img src="~/Images/storm_trooper.jpg" height="190" width="180">
+                    <p> <strong> User Name </strong> <br /> @Html.DisplayFor(model => model.UserName)<p>
+                        <hr />
+                </div><!--/span-->
+                <div class="col-xs-9">
+                    <h2>Welcome</h2>
+                    <p>Flavor text here!</p>
+                </div><!--/span-->
+
+            </div><!--/row-->
+            <div class="row">
+                <div class="col-xs-3">
+                    <h2>Contact</h2>
+                    <p><strong>@Html.DisplayNameFor(model => model.Email)</strong> <br> @Html.DisplayFor(model => model.Email) </p>
+                    <p><strong>Phone Number</strong> <br>@Html.DisplayFor(model => model.PhoneNumber)</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">Edit »</a></p>
+                </div><!--/span-->
+                <div class="col-xs-9 ">
+                    <h2>Skills and Culture</h2>
+                    <p>Partial Views</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3 bucket_medium">
+                </div>
+                <div class="col-xs-9 bucket_large">
+                    <h2>Jobs</h2>
+                    <p>Partial View</p>
+                </div>
+            </div>
+        </div><!--/span-->
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+
+            <div class="ad">
+                <a href="#" class="list-group-item">Boxes</a>
+                <div>
+
+                    <div class="ad">
+                        <a href="#" class="list-group-item">More Boxes</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div>
-    <h4>AspNetUser</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SeekerAccount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SeekerAccount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailConfirmed)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailConfirmed)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PasswordHash)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PasswordHash)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SecurityStamp)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SecurityStamp)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumberConfirmed)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TwoFactorEnabled)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TwoFactorEnabled)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LockoutEndDateUtc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LockoutEnabled)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LockoutEnabled)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AccessFailedCount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccessFailedCount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Role)
-        </dd>
-    </dl>
     <hr />
     @Html.ActionLink("Account Settings", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
 </div>
