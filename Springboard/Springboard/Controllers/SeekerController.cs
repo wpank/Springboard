@@ -49,7 +49,7 @@ namespace Springboard.Controllers
             }
         }
         // GET: Seeker
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
             //DatabaseModel model = new DatabaseModel();
             ApplicationDbContext model = new ApplicationDbContext();
@@ -70,6 +70,11 @@ namespace Springboard.Controllers
             //}
 
             return View("Index", user);
+        }
+
+        public ActionResult SeekerAccountPartial(SeekerAccount account)
+        {
+            return PartialView("SeekerAccountPartial", account);
         }
     }
 }

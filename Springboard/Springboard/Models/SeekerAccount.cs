@@ -7,7 +7,8 @@ namespace Springboard.Models
     using System.Data.Entity.Spatial;
 
     [Table("SeekerAccount")]
-    public partial class SeekerAccount
+    public partial class SeekerAccount:
+        ICultureRef
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SeekerAccount()
