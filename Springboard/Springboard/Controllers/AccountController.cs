@@ -157,6 +157,7 @@ namespace Springboard.Controllers
                 {
                     ApplicationDbContext context = new ApplicationDbContext();
                     SeekerAccount account = new SeekerAccount();
+                    account.Id = Guid.NewGuid();
                     context.SeekerAccounts.Add(account);
                     await context.SaveChangesAsync();
 
