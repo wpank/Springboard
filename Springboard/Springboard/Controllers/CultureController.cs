@@ -43,6 +43,7 @@ namespace Springboard.Controllers
         public async Task<ActionResult> CultureCreatePartial(CultureCreateViewModel viewModel)
         {
             ApplicationDbContext context = new ApplicationDbContext();
+            viewModel.Culture.Id = Guid.NewGuid();
             context.Cultures.Add(viewModel.Culture);
             await context.SaveChangesAsync();
 
