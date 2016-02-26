@@ -151,10 +151,23 @@ namespace Springboard.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Role = model.Role };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    ApplicationDbContext context = new ApplicationDbContext();
+                    SeekerAccount account = new SeekerAccount();
+                    account.Id = Guid.NewGuid();
+                    context.SeekerAccounts.Add(account);
+                    await context.SaveChangesAsync();
+
+                    context.Users.Attach(user);
+                    //user.SeekerAccount = account;
+                    var entry = context.Entry(user);
+                    entry.Reference(e => e.SeekerAccount).CurrentValue = account;
+                    //entry.Property(e => e.SeekerAccount).IsModified = true;
+                    await context.SaveChangesAsync();
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

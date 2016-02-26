@@ -6,9 +6,19 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Springboard.Models
 {
+
+    public enum Role
+    {
+        Seeker,
+        Poster,
+        Admin
+    }
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public Role Role { get; set; }
+        public SeekerAccount SeekerAccount { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -24,6 +34,14 @@ namespace Springboard.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public virtual DbSet<Application> Applications { get; set; }
+        //public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Culture> Cultures { get; set; }
+        public virtual DbSet<JobPosting> JobPostings { get; set; }
+        public virtual DbSet<SeekerAccount> SeekerAccounts { get; set; }
+        public virtual DbSet<SkillRequirement> SkillRequirements { get; set; }
+        public virtual DbSet<Skill> Skills { get; set; }
 
         public static ApplicationDbContext Create()
         {

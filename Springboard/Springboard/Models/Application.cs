@@ -10,20 +10,14 @@ namespace Springboard.Models
     public partial class Application
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
-
-        [Required]
-        [StringLength(128)]
-        public string SeekerId { get; set; }
-
-        public int JobPostingId { get; set; }
+        public Guid Id { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime DateOpen { get; set; }
 
         public bool Resolved { get; set; }
 
-        public virtual AspNetUser AspNetUser { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         public virtual JobPosting JobPosting { get; set; }
     }

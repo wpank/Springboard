@@ -15,7 +15,7 @@ namespace Springboard.Models
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public int? AI { get; set; }
 

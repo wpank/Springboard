@@ -7,7 +7,8 @@ namespace Springboard.Models
     using System.Data.Entity.Spatial;
 
     [Table("JobPosting")]
-    public partial class JobPosting
+    public partial class JobPosting:
+        ICultureRef
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public JobPosting()
@@ -16,7 +17,7 @@ namespace Springboard.Models
         }
         
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -26,18 +27,10 @@ namespace Springboard.Models
         [Required]
         public string JobDescription { get; set; }
 
-        [Required]
-        [StringLength(128)]
-        public string PosterId { get; set; }
-
-        public int CultureId { get; set; }
-
-        public int SkillRequirementsId { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }
 
-        public virtual AspNetUser AspNetUser { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         public virtual Culture Culture { get; set; }
 

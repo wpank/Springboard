@@ -320,6 +320,19 @@ namespace Springboard.Controllers
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
 
+        //
+        //GET: /Shared/AccountTypePartial
+        public ActionResult AccountTypePartial()
+        {
+            ApplicationDbContext model = new ApplicationDbContext();
+            //DatabaseModel model = new DatabaseModel();
+            string id = User.Identity.GetUserId();
+            var user = (from s in model.Users
+                        where s.Id == id
+                        select s).FirstOrDefault();
+            return PartialView("AccountTypePartial", user);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && _userManager != null)

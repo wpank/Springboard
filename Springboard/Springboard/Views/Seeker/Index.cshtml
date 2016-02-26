@@ -1,0 +1,67 @@
+﻿@model Springboard.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "SeekerDashboard";
+}
+
+<h2>Dashboard</h2>
+
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+            <p class="pull-xs-right hidden-sm-up">
+
+            </p>
+            <div class="row">
+                <div class="col-xs-3">
+                    <img src="~/Images/storm_trooper.jpg" height="190" width="180">
+                    <p> <strong> User Name </strong> <br /> @Html.DisplayFor(model => model.UserName)<p>
+                        <hr />
+                </div><!--/span-->
+                <div class="col-xs-9">
+                    <h2>Welcome</h2>
+                    <p>Flavor text here!</p>
+                </div><!--/span-->
+
+            </div><!--/row-->
+            <div class="row">
+                <div class="col-xs-3">
+                    <h2>Contact</h2>
+                    <p><strong>@Html.DisplayNameFor(model => model.Email)</strong> <br> @Html.DisplayFor(model => model.Email) </p>
+                    <p><strong>Phone Number</strong> <br>@Html.DisplayFor(model => model.PhoneNumber)</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">Edit »</a></p>
+                </div><!--/span-->
+                <div class="col-xs-9 ">
+                    <h2>Skills and Culture</h2>
+                    <p>Partial Views</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3 bucket_medium">
+                </div>
+                <div class="col-xs-9 bucket_large">
+                    <h2>Jobs</h2>
+                    @Html.Action("SeekerAccountPartial", Model.SeekerAccount);
+                </div>
+            </div>
+        </div><!--/span-->
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+
+            <div class="ad">
+                <a href="#" class="list-group-item">Boxes</a>
+                <div>
+
+                    <div class="ad">
+                        <a href="#" class="list-group-item">More Boxes</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <hr />
+    @Html.ActionLink("Account Settings", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+</div>

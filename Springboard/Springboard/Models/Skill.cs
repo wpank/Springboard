@@ -15,7 +15,7 @@ namespace Springboard.Models
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Display(Name = "AI")]
         public int AI_Rank { get; set; }
