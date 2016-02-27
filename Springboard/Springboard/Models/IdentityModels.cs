@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 
 namespace Springboard.Models
 {
@@ -17,7 +18,9 @@ namespace Springboard.Models
     public class ApplicationUser : IdentityUser
     {
         public Role Role { get; set; }
-        public SeekerAccount SeekerAccount { get; set; }
+
+        public Guid? SeekerAccountId { get; set; }
+        public virtual SeekerAccount SeekerAccount { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
