@@ -78,6 +78,7 @@ namespace Springboard.Models
         public string LastName { get; set; }
 
         [Required]
+        [Range(0,150)]
         [Display(Name = "Age")]
         public int Age { get; set; }
 

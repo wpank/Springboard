@@ -241,6 +241,10 @@
     <Compile Include="Migrations\201602272239156_ForeignKeyFix.Designer.cs">
       <DependentUpon>201602272239156_ForeignKeyFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602272249437_UserDataUpdates.cs" />
+    <Compile Include="Migrations\201602272249437_UserDataUpdates.Designer.cs">
+      <DependentUpon>201602272249437_UserDataUpdates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
@@ -388,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602272239156_ForeignKeyFix.resx">
       <DependentUpon>201602272239156_ForeignKeyFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602272249437_UserDataUpdates.resx">
+      <DependentUpon>201602272249437_UserDataUpdates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
