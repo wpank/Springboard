@@ -200,7 +200,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CultureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobsPageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PosterController.cs" />
     <Compile Include="Controllers\SeekerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -263,6 +265,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\default_company_logo.png" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -364,6 +367,16 @@
     <Content Include="Views\Seeker\Index.cshtml" />
     <Content Include="Views\Seeker\SeekerAccountPartial.cshtml" />
     <Content Include="Views\Culture\CultureCreatePartial.cshtml" />
+    <Content Include="Views\JobsPage\Create.cshtml" />
+    <Content Include="Views\JobsPage\Delete.cshtml" />
+    <Content Include="Views\JobsPage\Details.cshtml" />
+    <Content Include="Views\JobsPage\Edit.cshtml" />
+    <Content Include="Views\JobsPage\Index.cshtml" />
+    <Content Include="Views\Poster\Create.cshtml" />
+    <Content Include="Views\Poster\Delete.cshtml" />
+    <Content Include="Views\Poster\Details.cshtml" />
+    <Content Include="Views\Poster\Edit.cshtml" />
+    <Content Include="Views\Poster\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">

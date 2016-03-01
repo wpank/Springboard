@@ -1,0 +1,180 @@
+﻿@model IEnumerable<Springboard.Models.JobPosting>
+
+@{
+    ViewBag.Title = "Jobs Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!--<meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="custom_style.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+            -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <!-- bootstrap css and js -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <!-- jplist core -->
+    <script src="jplist-core.min.js"></script>
+
+    <!-- jplist bootstrap sort dropdown control -->
+    <script src="jplist.boot-sort-dropdown.min.js"></script>
+
+    <script>
+$('document').ready(function(){
+
+   $('#demo').jplist({
+      itemsBox: '.list'
+      ,itemPath: '.list-item'
+      ,panelPath: '.jplist-panel'
+   });
+
+});
+    </script>
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script>
+  $(function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 20000,
+      max: 300000,
+      values: [ 40000, 80000 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  });
+    </script>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @{Layout = "~/Views/Shared/_Layout.cshtml";}
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-right">
+
+            <div style="margin-top: 20px; margin-bottom: 20px;" class="row">
+                <div class="col-xs-2">
+                    <!-- panel -->
+                    <div class="jplist-panel">
+                        <!-- jplist bootstrap sort dropdown control -->
+                        <div style="text-align:center;" class="dropdown"
+                             data-control-type="boot-sort-drop-down"
+                             data-control-name="bootstrap-sort-dropdown-demo"
+                             data-control-action="sort"
+                             data-datetime-format="{month}/{day}/{year}">
+                            <!-- {year}, {month}, {day}, {hour}, {min}, {sec} -->
+
+                            <button class="btn btn-default dropdown-toggle"
+                                    type="button"
+                                    id="sort-by-dropdown-btn"
+                                    data-toggle="dropdown"
+                                    aria-expanded="true">
+                                <span data-type="selected-text">Sort by</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation">
+                                    <a role="menuitem"
+                                       tabindex="-1"
+                                       href="#"
+                                       data-path=".title"
+                                       data-order="asc"
+                                       data-type="text"
+                                       data-default="true">Job Title A-Z</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem"
+                                       tabindex="-1"
+                                       href="#"
+                                       data-path=".title"
+                                       data-order="desc"
+                                       data-type="text">Job Title Z-A</a>
+                                </li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation">
+                                    <a role="menuitem"
+                                       tabindex="-1"
+                                       href="#"
+                                       data-path=".desc"
+                                       data-order="asc"
+                                       data-type="text">Description A-Z</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem"
+                                       tabindex="-1"
+                                       href="#"
+                                       data-path=".desc"
+                                       data-order="desc"
+                                       data-type="text">Description Z-A</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="checkbox">
+                            <form method="post">
+                                <fieldset>
+                                    <legend>Job Type</legend>
+                                    <input type="checkbox" name="jobType" value="Full-Time" /> Full-Time <br />
+                                    <input type="checkbox" name="jobType" value="Contract" /> Contract <br />
+                                    <input type="checkbox" name="jobType" value="Internship" /> Internship <br />
+                                    <input type="checkbox" name="jobType" value="Part-Time" /> Part-Time <br />
+                                    <input type="submit" value="Refresh Jobs" />
+                                </fieldset>
+                            </form>
+                        </div>
+                        <p>
+                            <label for="amount">Salary range:</label>
+                            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                        </p>
+
+                        <div id="slider-range"></div>
+                    </div>
+                    </div>
+                <div class="col-xs-10">
+
+                    <div class="list-item">
+                        @foreach (var thing in Model)
+                        {
+
+                            <div class="container">
+                                <div class="row">
+                                    <div style="border-radius: 25px;border: 2px solid #A9A9A9;padding: 20px; margin-top: 5px; margin-bottom: 5px;" class="col-md-10">
+                                        <!--<p style="float:right" class="date"></p>-->
+                                        <p class="title">
+                                            @Html.DisplayFor(modelItem => thing.JobTitle)
+                                        </p>
+                                        <p class="desc">
+                                            @Html.DisplayFor(modelItem => thing.JobDescription)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
