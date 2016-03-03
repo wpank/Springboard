@@ -364,6 +364,7 @@
     <Content Include="Views\Seeker\Index.cshtml" />
     <Content Include="Views\Seeker\SeekerAccountPartial.cshtml" />
     <Content Include="Views\Culture\CultureCreatePartial.cshtml" />
+    <Content Include="Views\AddPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">
@@ -404,7 +405,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
