@@ -14,24 +14,9 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                    <a href="@Url.Action("Index", "Home")" class="navbar-brand">
-                        <img src="~/Content/Images/website_logo.png" height="120" title="Springboard Logo" alt="logo" />
-                    </a>
-                <a class="navb">@Html.ActionLink("Springboard", "Index", "Home", new { area = "" }, new { @class = "navbar-text" })</a>
-                
-            </div>
-            <div class="navbar-collapse collapse" style="clear:both">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
+    @{ 
+        Html.RenderPartial("_HeaderNavBar");
+    }
     <div class="container body-content">
         @RenderBody()
         <hr />
