@@ -15,7 +15,12 @@
             <div class="row">
                 <div class="col-xs-3">
                     <img src="~/Images/storm_trooper.jpg" height="190" width="180">
-                    <p> <strong> User Name </strong> <br /> @Html.DisplayFor(model => model.UserName)<p>
+                    <p> 
+                        <strong> User Name </strong> 
+                        <br /> 
+                        @Html.DisplayFor(model => model.FirstName)
+                        @Html.DisplayFor(model => model.LastName)
+                    <p>
                         <hr />
                 </div><!--/span-->
                 <div class="col-xs-9">

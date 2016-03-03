@@ -1,0 +1,30 @@
+
+    @{  
+        ViewBag.Title = "NewRecord";  
+    }  
+      
+    <h2>NewRecord</h2>  
+    <h6>@Html.ActionLink("Go Back", "Index", "SpringBoard")</h6>  
+    @using (@Html.BeginForm("Insert", "FormCollection", FormMethod.Post))  
+    {  
+        <table>  
+            <tr>              
+                <td>@Html.Label("Name")</td><td>:</td><td>@Html.TextBox("TxtName")</td>  
+            </tr>  
+            <tr>  
+                <td>@Html.Label("Mobile No")</td><td>:</td><td>@Html.TextBox("Mobile")</td>  
+            </tr>  
+            <tr>  
+                <td>@Html.Label("EmailID")</td><td>:</td><td>@Html.TextBox("TxtEmailID")</td>  
+            </tr>  
+            <tr>  
+                <td>@Html.Label("Address")</td><td>:</td><td>@Html.TextBox("TxtAddress")</td>  
+            </tr>  
+            <tr>  
+                <td>@Html.Label("Save Your Details")</td><td>:</td><td><input type="submit" value="Submit" /></td>  
+            </tr>  
+             <tr>  
+                <td>@Html.Label("Reset Your Details")</td><td>:</td><td><input type="reset" value="Reset" /></td>  
+            </tr>  
+        </table>  
+    }  
