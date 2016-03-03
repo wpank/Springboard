@@ -25,6 +25,7 @@ namespace Springboard.Models
 
         [Column(TypeName = "text")]
         [Required]
+        [DataType(DataType.MultilineText)]
         public string JobDescription { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
