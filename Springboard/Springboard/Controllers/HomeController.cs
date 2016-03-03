@@ -26,5 +26,12 @@ namespace Springboard.Controllers
 
             return View();
         }
+
+        public ActionResult Help()
+        {
+            ViewBag.Message = "Help";
+
+            return View();
+        }
     }
 }
