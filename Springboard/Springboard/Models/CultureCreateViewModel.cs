@@ -6,11 +6,25 @@ using System.Web.Mvc;
 
 namespace Springboard.Models
 {
+    public enum CultureCreatorType
+    {
+        SeekerAccount,
+        JobPosting
+    }
+
     public class CultureCreateViewModel
     {
-        public ICultureRef CultureRef { get; set; }
-        public Culture Culture { get; set; }
+        public CultureCreatorType CreatorType { get; set; }
+        public Guid CreatorId { get; set; }
         public List<Trait> Traits { get; set; }
+    }
+
+    [Serializable]
+    public class CultureCreatePostModel
+    {
+        public CultureCreatorType CreatorType { get; set;}
+        public string CreatorId { get; set; }
+        public string Selection { get; set; }
     }
 
     public class Trait
