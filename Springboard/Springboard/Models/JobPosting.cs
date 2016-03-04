@@ -7,8 +7,7 @@ namespace Springboard.Models
     using System.Data.Entity.Spatial;
 
     [Table("JobPosting")]
-    public partial class JobPosting:
-        ICultureRef
+    public partial class JobPosting
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public JobPosting()
