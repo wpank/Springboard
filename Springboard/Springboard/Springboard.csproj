@@ -365,7 +365,6 @@
     <Content Include="Views\Seeker\SeekerAccountPartial.cshtml" />
     <Content Include="Views\Culture\CultureCreatePartial.cshtml" />
     <Content Include="Views\AddPost.cshtml" />
-    <Content Include="Views\Shared\_HeaderNavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">

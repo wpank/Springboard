@@ -36,7 +36,7 @@ namespace Springboard.Controllers
                 Traits = listItems
             };
 
-            return View("CultureCreatePartial", viewModel);
+            return PartialView("CultureCreatePartial", viewModel);
         }
 
         [HttpPost]
