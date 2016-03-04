@@ -250,7 +250,6 @@
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Culture.cs" />
     <Compile Include="Models\CultureCreateViewModel.cs" />
-    <Compile Include="Models\ICultureRef.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\JobPosting.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -321,6 +320,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\test.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
