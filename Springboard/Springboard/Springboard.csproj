@@ -250,7 +250,6 @@
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Culture.cs" />
     <Compile Include="Models\CultureCreateViewModel.cs" />
-    <Compile Include="Models\ICultureRef.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\JobPosting.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -321,6 +320,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\test.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -365,6 +365,7 @@
     <Content Include="Views\Seeker\SeekerAccountPartial.cshtml" />
     <Content Include="Views\Culture\CultureCreatePartial.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
+    <Content Include="Views\AddPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">
@@ -405,7 +406,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
