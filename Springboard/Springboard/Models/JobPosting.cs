@@ -7,8 +7,7 @@ namespace Springboard.Models
     using System.Data.Entity.Spatial;
 
     [Table("JobPosting")]
-    public partial class JobPosting:
-        ICultureRef
+    public partial class JobPosting
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public JobPosting()
@@ -25,6 +24,7 @@ namespace Springboard.Models
 
         [Column(TypeName = "text")]
         [Required]
+        [DataType(DataType.MultilineText)]
         public string JobDescription { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

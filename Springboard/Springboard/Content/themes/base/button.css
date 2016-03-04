@@ -9,15 +9,24 @@
  * http://api.jqueryui.com/button/#theming
  */
 .ui-button {
-	display: inline-block;
-	position: relative;
-	padding: 0;
-	line-height: normal;
-	margin-right: .1em;
-	cursor: pointer;
-	vertical-align: middle;
-	text-align: center;
-	overflow: visible; /* removes extra width in IE */
+    color:black;
+    position: relative;
+
+    display: block;
+    margin: 20px auto;
+    padding: 15px;
+    margin-right:4px;
+    overflow: hidden;
+
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  
+    background-color: #7986cb;
+    color: #ecf0f1;
+  
+    transition: background-color .3s;
 }
 .ui-button,
 .ui-button:link,
