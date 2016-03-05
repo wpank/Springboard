@@ -162,7 +162,8 @@ $('document').ready(function(){
                                         <!--<p style="float:right" class="date"></p>-->
                                         <button style="margin:1em; float:right;" type="button" class="btn btn-primary">Apply</button>
                                         <p class="title">
-                                            @Html.DisplayFor(modelItem => thing.JobTitle)
+                                            @Html.ActionLink(thing.JobTitle, "Details", new { id = thing.Id })
+                                            <!--@Html.DisplayFor(modelItem => thing.JobTitle)-->
                                         </p>
                                         <p class="desc">
                                             @Html.DisplayFor(modelItem => thing.JobDescription)
