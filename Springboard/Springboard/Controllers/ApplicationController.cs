@@ -38,13 +38,23 @@ namespace Springboard.Controllers
                 _userManager = value;
             }
         }
-        public ActionResult Index()
+        public ActionResult SeekerApplication()
         {
             ApplicationDbContext context = new ApplicationDbContext();
             String id = User.Identity.GetUserId();
-            var user = from s in context.Applications where s.UserId == id select s;
+            var seeker = from s in context.Applications where s.UserId == id select s;
             
-            return PartialView("CurrentSeekerApplications", user);
+            return PartialView("CurrentSeekerApplications", seeker);
+        }
+
+        public ActionResult PosterApplication()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+
+            String posterId = User.Identity.GetUserId();
+            //posterId needs to be the JobPostingId, NOT the User ID to match. Not sure how to access this
+            var poster = from s in context.Applications where s.JobPostingId.Equals(posterId) select s;
+            return PartialView("CurrentSeekerApplications", poster);
         }
     }
 }
