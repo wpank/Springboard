@@ -39,16 +39,60 @@ namespace Springboard.Controllers
         [HttpPost]
         public async Task<ActionResult> CultureCreatePartial(CultureCreatePostModel result)
         {
-
-
-            ApplicationDbContext context = new ApplicationDbContext();
+            //Parse the data and configure a culture model
             Culture model = new Culture();
-            switch(result.CreatorType)
+            foreach(TraitRank rank in result.Selection)
             {
+                model.GetType().GetProperty(rank.PropertyName).SetValue(model, rank.Rank);
+            }
+            model.Id = Guid.NewGuid();
 
+            //Create a new Db context
+            ApplicationDbContext context = new ApplicationDbContext();
+
+            //Store the model
+            context.Cultures.Add(model);
+            await context.SaveChangesAsync();
+
+            //Update the appropriate account
+            switch (result.CreatorType)
+            {
+                case (CultureCreatorType.SeekerAccount):
+                    {
+                        SeekerAccount account = (from s in context.SeekerAccounts
+                                                 where s.Id == result.CreatorId
+                                                 select s).FirstOrDefault();
+                        if (account == null) break;
+
+                        context.SeekerAccounts.Attach(account);
+                        var entry = context.Entry(account);
+                        entry.Reference(e => e.Culture).CurrentValue = model;
+                        await context.SaveChangesAsync();
+
+                        break;
+                    }
+                case (CultureCreatorType.JobPosting):
+                {
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
             }
 
-            return null;//PartialView(viewModel.Culture);
+            return PartialView("CultureEditPartial", model);
+        }
+
+        // GET: Culture
+        public ActionResult CultureEditPartial(Guid CultureId)
+        {
+            //Create a new Db context
+            ApplicationDbContext context = new ApplicationDbContext();
+            Culture model = (from s in context.Cultures
+                             where s.Id == CultureId
+                             select s).FirstOrDefault();
+            return PartialView("CultureEditPartial", model);
         }
     }
 }

@@ -34,15 +34,12 @@ $(document).ready(function () {
     });
     $("#btnClick").click(function () {
         var data = $("#listCultureSelection").sortable('serialize');
-        var culture = "{";
+        var culture = [];
         var index = 0;
         var list = data.split("&").forEach(function (entry) {
-            culture += entry.replace("set[]=", "") + ": " + index + ", ";
+            culture.push({ PropertyName: entry.replace("set[]=", ""), Rank: index });
             index++;
-
         });
-        culture = culture.substring(0, culture.length - 2);
-        culture += "}";
 
         $.post("Culture/CultureCreatePartial",
             {
@@ -52,7 +49,6 @@ $(document).ready(function () {
             }, function () { });
     });
 })
-
     function serializeListItem(item, count)
     {
         return { Id: item.id, Position: count };

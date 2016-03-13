@@ -23,8 +23,15 @@ namespace Springboard.Models
     public class CultureCreatePostModel
     {
         public CultureCreatorType CreatorType { get; set;}
-        public string CreatorId { get; set; }
-        public string Selection { get; set; }
+        public Guid CreatorId { get; set; }
+        public List<TraitRank> Selection { get; set; }
+    }
+
+    [Serializable]
+    public class TraitRank
+    {
+        public string PropertyName { get; set; }
+        public int Rank { get; set; }
     }
 
     public class Trait

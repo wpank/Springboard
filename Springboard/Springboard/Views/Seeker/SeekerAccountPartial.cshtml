@@ -2,13 +2,13 @@
 @model Springboard.Models.SeekerAccount
 @if (Model != null)
 {
-    if (Model.Culture == null)
+    if (Model.CultureId == null)
     {
-          <h4>@Html.Action("CultureCreatePartialSeekerAccount", "Culture", Model)</h4>
+          @Html.Action("CultureCreatePartialSeekerAccount", "Culture", Model)
     }
     else
     {
-        <h4>Culture Exists</h4>
+        @Html.Action("CultureEditPartial", "Culture", Model.CultureId)
     }
 
     if (Model.Skill == null)
