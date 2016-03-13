@@ -204,7 +204,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PosterController.cs" />
     <Compile Include="Controllers\SeekerController.cs" />
-    <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -381,7 +380,6 @@
     <Content Include="Views\Home\Help.cshtml" />
     <Content Include="Views\AddPost.cshtml" />
     <Content Include="Views\Culture\CultureEditPartial.cshtml" />
-    <Content Include="Views\Skills\SkillsCreatePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">
