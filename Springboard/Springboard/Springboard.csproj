@@ -389,6 +389,7 @@
     <Content Include="Views\Culture\CultureEditPartial.cshtml" />
     <Content Include="Views\Skills\SkillCreatePartial.cshtml" />
     <Content Include="Views\Skills\SkillDetailsPartial.cshtml" />
+    <Content Include="Views\Application\CurrentSeekerApplications.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">
