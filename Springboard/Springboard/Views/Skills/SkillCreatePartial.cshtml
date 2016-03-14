@@ -1,10 +1,8 @@
 ﻿@using Springboard.Models
-@model Springboard.Models.CultureCreateViewModel
-
-@Scripts.Render("~/bundles/jqueryval")
+@model Springboard.Models.SkillCreateViewModel
 
 <style>
-    #listCultureTraits, #listCultureSelection {
+    #listSkillTraits, #listSkillSelection {
         border: 1px solid #eee;
         width: auto;
         min-width: 200px;
@@ -16,7 +14,7 @@
         margin-right: 10px;
     }
 
-        #listCultureTraits li, #listCultureSelection li {
+        #listSkillTraits li, #listSkillSelection li {
             margin: 0 5px 5px 5px;
             padding: 5px;
             font-size: 1.2em;
@@ -27,25 +25,25 @@
 
 <script type="text/javascript">
 $(document).ready(function () {
-    $("#listCultureTraits").sortable({
-        connectWith: "#listCultureSelection"
+    $("#listSkillTraits").sortable({
+        connectWith: "#listSkillSelection"
     }).disableSelection();
-    $("#listCultureSelection").sortable({
+    $("#listSkillSelection").sortable({
     });
-    $("#btnCultureSubmit").click(function () {
-        var data = $("#listCultureSelection").sortable('serialize');
-        var culture = [];
+    $("#btnSkillSubmit").click(function () {
+        var data = $("#listSkillSelection").sortable('serialize');
+        var Skill = [];
         var index = 0;
         var list = data.split("&").forEach(function (entry) {
-            culture.push({ PropertyName: entry.replace("set[]=", ""), Rank: index });
+            Skill.push({ PropertyName: entry.replace("set[]=", ""), Rank: index });
             index++;
         });
 
-        $.post("Culture/CultureCreatePartial",
+        $.post("Skills/SkillCreatePartial",
             {
                 CreatorType: "@Model.CreatorType",
                 CreatorId: "@Model.CreatorId",
-                Selection: culture
+                Selection: Skill
             }, function () { });
     });
 })
@@ -66,7 +64,7 @@ $(document).ready(function () {
     </tr>
     <tr>
         <td style="vertical-align: top">
-            <ol id="listCultureTraits" class="connectedSortable">
+            <ol id="listSkillTraits" class="connectedSortable">
                 @foreach (Trait trait in Model.Traits)
                 {
                     <li id="set_@trait.DisplayName">@trait.DisplayName</li>
@@ -74,8 +72,8 @@ $(document).ready(function () {
             </ol>
         </td>
         <td style="vertical-align: top">
-            <ol id="listCultureSelection" class="connectedSortable"></ol>
+            <ol id="listSkillSelection" class="connectedSortable"></ol>
         </td>
     </tr>
 </table>
-<input type="button" value="Submit Culture" id="btnCultureSubmit" />
+<input type="button" value="Submit Skill" id="btnSkillSubmit" />

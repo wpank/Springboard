@@ -34,7 +34,7 @@ namespace Springboard.Models
         public Guid? CultureId { get; set; }
         public Culture Culture { get; set; }
 
-        public Guid? SkillId { get; set; }
-        public Skill Skill { get; set; }
+        public Guid? SkillRequirementId { get; set; }
+        public SkillRequirement SkillRequirement { get; set; }
     }
 }

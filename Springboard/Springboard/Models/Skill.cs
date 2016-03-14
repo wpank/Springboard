@@ -11,7 +11,7 @@ namespace Springboard.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Skill()
         {
-            SeekerAccounts = new HashSet<SeekerAccount>();
+            //SeekerAccounts = new HashSet<SeekerAccount>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -95,8 +95,5 @@ namespace Springboard.Models
         public int WebDev_Rank { get; set; }
 
         public int WebDev_Conf { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SeekerAccount> SeekerAccounts { get; set; }
     }
 }

@@ -8,16 +8,15 @@ using System.Web.Mvc;
 
 namespace Springboard.Controllers
 {
-    public class CultureController : Controller
+    public class SkillsController : Controller
     {
-        // GET: Culture
-        public ActionResult CultureCreatePartialSeekerAccount(SeekerAccount model)
+        public ActionResult SkillCreatePartialSeekerAccount(SeekerAccount model)
         {
-            Culture culture = new Culture();
+            SkillRequirement Skill = new SkillRequirement();
             List<Trait> listItems = new List<Trait>();
-            foreach (var prop in from s in culture.GetType().GetProperties() select s)
+            foreach (var prop in from s in Skill.GetType().GetProperties() select s)
             {
-                if (!prop.PropertyType.Equals(typeof(int)))
+                if (!prop.PropertyType.Equals(typeof(int?)))
                     continue;
                 Trait item = new Trait
                 {
@@ -26,22 +25,22 @@ namespace Springboard.Controllers
                 };
                 listItems.Add(item);
             }
-            CultureCreateViewModel viewModel = new CultureCreateViewModel
+            SkillCreateViewModel viewModel = new SkillCreateViewModel
             {
-                CreatorType = CultureCreatorType.SeekerAccount,
+                CreatorType = SkillCreatorType.SeekerAccount,
                 CreatorId = model.Id,
                 Traits = listItems
             };
 
-            return PartialView("CultureCreatePartial", viewModel);
+            return PartialView("SkillCreatePartial", viewModel);
         }
 
         [HttpPost]
-        public async Task<ActionResult> CultureCreatePartial(CultureCreatePostModel result)
+        public async Task<ActionResult> SkillCreatePartial(SkillCreatePostModel result)
         {
-            //Parse the data and configure a culture model
-            Culture model = new Culture();
-            foreach(TraitRank rank in result.Selection)
+            //Parse the data and configure a Skill model
+            SkillRequirement model = new SkillRequirement();
+            foreach (TraitRank rank in result.Selection)
             {
                 model.GetType().GetProperty(rank.PropertyName).SetValue(model, rank.Rank);
             }
@@ -51,13 +50,13 @@ namespace Springboard.Controllers
             ApplicationDbContext context = new ApplicationDbContext();
 
             //Store the model
-            context.Cultures.Add(model);
+            context.SkillRequirements.Add(model);
             await context.SaveChangesAsync();
 
             //Update the appropriate account
             switch (result.CreatorType)
             {
-                case (CultureCreatorType.SeekerAccount):
+                case (SkillCreatorType.SeekerAccount):
                     {
                         SeekerAccount account = (from s in context.SeekerAccounts
                                                  where s.Id == result.CreatorId
@@ -66,33 +65,33 @@ namespace Springboard.Controllers
 
                         context.SeekerAccounts.Attach(account);
                         var entry = context.Entry(account);
-                        entry.Reference(e => e.Culture).CurrentValue = model;
+                        entry.Reference(e => e.SkillRequirement).CurrentValue = model;
                         await context.SaveChangesAsync();
 
                         break;
                     }
-                case (CultureCreatorType.JobPosting):
-                {
-                    break;
-                }
+                case (SkillCreatorType.JobPosting):
+                    {
+                        break;
+                    }
                 default:
-                {
-                    break;
-                }
+                    {
+                        break;
+                    }
             }
 
             return RedirectToAction("Seeker/Index");
         }
 
-        // GET: Culture
-        public ActionResult CultureEditPartial(Guid CultureId)
+        // GET: Skills
+        public ActionResult SkillDetailsPartial(Guid? SkillRequirementId)
         {
             //Create a new Db context
             ApplicationDbContext context = new ApplicationDbContext();
-            Culture model = (from s in context.Cultures
-                             where s.Id == CultureId
-                             select s).FirstOrDefault();
-            return PartialView("CultureEditPartial", model);
+            SkillRequirement model = (from s in context.SkillRequirements
+                             where s.Id == SkillRequirementId
+                                      select s).FirstOrDefault();
+            return PartialView("SkillDetailsPartial", model);
         }
     }
 }

@@ -204,6 +204,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PosterController.cs" />
     <Compile Include="Controllers\SeekerController.cs" />
+    <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -247,6 +248,10 @@
     <Compile Include="Migrations\201602272249437_UserDataUpdates.Designer.cs">
       <DependentUpon>201602272249437_UserDataUpdates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603131912496_SkillIntegration.cs" />
+    <Compile Include="Migrations\201603131912496_SkillIntegration.Designer.cs">
+      <DependentUpon>201603131912496_SkillIntegration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Application.cs" />
@@ -258,6 +263,7 @@
     <Compile Include="Models\SeekerAccount.cs" />
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\SkillRequirement.cs" />
+    <Compile Include="Models\SkillsCreationViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -380,6 +386,8 @@
     <Content Include="Views\Home\Help.cshtml" />
     <Content Include="Views\AddPost.cshtml" />
     <Content Include="Views\Culture\CultureEditPartial.cshtml" />
+    <Content Include="Views\Skills\SkillCreatePartial.cshtml" />
+    <Content Include="Views\Skills\SkillDetailsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">
@@ -411,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602272249437_UserDataUpdates.resx">
       <DependentUpon>201602272249437_UserDataUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603131912496_SkillIntegration.resx">
+      <DependentUpon>201603131912496_SkillIntegration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

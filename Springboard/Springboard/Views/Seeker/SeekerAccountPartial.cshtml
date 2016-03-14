@@ -11,12 +11,12 @@
         @Html.Action("CultureEditPartial", "Culture", Model.CultureId)
     }
 
-    if (Model.Skill == null)
+    if (Model.SkillRequirementId == null)
     {
-        <h4>Create Skill</h4>
+        @Html.Action("SkillCreatePartialSeekerAccount", "Skills", Model)
     }
     else
     {
-        <h4>Skill Exists</h4>
+        @Html.Action("SkillDetailsPartial", "Skills", Model.SkillRequirementId);
     }
 }

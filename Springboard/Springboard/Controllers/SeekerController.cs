@@ -49,6 +49,7 @@ namespace Springboard.Controllers
             }
         }
         // GET: Seeker
+        [HttpGet]
         public ActionResult Index()
         {
             //DatabaseModel model = new DatabaseModel();
