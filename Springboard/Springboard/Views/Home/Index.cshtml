@@ -1,50 +1,29 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<link href="@Url.Content("~/Content/index.css")" rel="stylesheet" type="text/css" />
 
-<div class="jumbotron">
-    <h1>Springboard!</h1>
-    <p class="lead">Look at this fancy demo stuff</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="jumbotron splash">
+    <h1>Job matching at its finest</h1>
+    <br />
+    <p class="lead">Jumpstart your way into a new career.</p>
+    <br />
+    <p><button class="btn btn-default">@Html.ActionLink("Find Out More", "About", "Home")</button></p>
 </div>
 
-<div class="row">
+<div class="row steps">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Step 1</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse non pretium quam. Donec risus massa, dapibus id ipsum vitae,
-            malesuada convallis ipsum. Cras dignissim nibh non velit pharetra
-            vulputate. Morbi maximus justo ex, quis porta arcu suscipit vitae. 
-            Praesent ultrices velit odio, sed pharetra risus scelerisque sit amet. 
-            Suspendisse semper metus ut magna aliquet finibus. Etiam tempor, 
-            tortor ut ornare volutpat, erat nibh facilisis dui, quis tristique ex 
-            justo eget lorem. Phasellus posuere vulputate ipsum quis consequat.
+            Register for a new account.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Examples and Stuff</h2>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse non pretium quam. Donec risus massa, dapibus id ipsum vitae,
-            malesuada convallis ipsum. Cras dignissim nibh non velit pharetra
-            vulputate. Morbi maximus justo ex, quis porta arcu suscipit vitae.
-            Praesent ultrices velit odio, sed pharetra risus scelerisque sit amet.
-            Suspendisse semper metus ut magna aliquet finibus. Etiam tempor,
-            tortor ut ornare volutpat, erat nibh facilisis dui, quis tristique ex
-            justo eget lorem. Phasellus posuere vulputate ipsum quis consequat.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Step 2</h2>
+        <p>Identify the skillset.</p>
     </div>
     <div class="col-md-4">
-        <h2>Glory to the ASP</h2>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse non pretium quam. Donec risus massa, dapibus id ipsum vitae,
-            malesuada convallis ipsum. Cras dignissim nibh non velit pharetra
-            vulputate. Morbi maximus justo ex, quis porta arcu suscipit vitae.
-            Praesent ultrices velit odio, sed pharetra risus scelerisque sit amet.
-            Suspendisse semper metus ut magna aliquet finibus. Etiam tempor,
-            tortor ut ornare volutpat, erat nibh facilisis dui, quis tristique ex
-            justo eget lorem. Phasellus posuere vulputate ipsum quis consequat.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Step 3</h2>
+        <p> Jumpstart a new career.</p>
     </div>
 </div>

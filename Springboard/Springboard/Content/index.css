@@ -1,0 +1,54 @@
+﻿body {
+
+    background-color: antiquewhite;
+}
+
+.splash{
+    color:aliceblue;
+    background-image: url("../../Content/Images/splash5.jpg");
+    background-size: contain;
+    background-size: 100% 100%;
+    height: 50vh;
+    padding: 170px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.splash p{
+    font-size: 150%;
+    letter-spacing: 1px;
+}
+
+.splash h1{
+    letter-spacing: 1px;
+}
+
+.steps h2{
+    text-align: center;
+
+
+}
+.steps p{
+    text-align:center;
+    font-size: 200%;
+
+
+}
+
+.steps{
+    padding:1.5rem;
+    box-shadow:0 1px 2px #aaa;
+    background:white;
+    margin:0 1rem 1rem;
+    border-radius:3px;
+    user-select:none;
+    animation:fly-in-from-left .5s 1s ease both;
+    transform-origin:top left;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: #7986cb;
+    color: whitesmoke
+}
+
+
+
+
+
+
