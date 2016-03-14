@@ -5,6 +5,7 @@
     if (Model.CultureId == null)
     {
           @Html.Action("CultureCreatePartialSeekerAccount", "Culture", Model)
+         
     }
     else
     {
@@ -19,4 +20,6 @@
     {
         @Html.Action("SkillDetailsPartial", "Skills", Model.SkillRequirementId);
     }
+
+    @Html.Action("Index", "Application");
 }

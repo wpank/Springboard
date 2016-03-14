@@ -1,6 +1,7 @@
 ﻿@model Springboard.Models.JobPosting
 
 @{
+    ViewBag.Title = "Job Details";
     Layout = null;
 }
 
@@ -9,58 +10,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
+    <title>Job Details</title>
 </head>
 <body>
+    @{Layout = "~/Views/Shared/_Layout.cshtml";}
     <div>
-        <h4>JobPosting</h4>
+        <h3>@Html.DisplayFor(model => model.JobTitle)</h3>
         <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Culture.Id)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Culture.Id)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.SkillRequirement.Id)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.SkillRequirement.Id)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.User.FirstName)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.User.FirstName)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.JobTitle)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.JobTitle)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.JobDescription)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.JobDescription)
-            </dd>
-    
-        </dl>
+        <p> @Html.DisplayFor(model => model.JobDescription) </p>
+        <br/>
+        <div>
+            <form method="get" action="/Application/CurrentSeekerApplications">
+            <input type="submit" class="btn btn-primary" value="Apply" />
+            </form> 
+        </div>
     </div>
+    <br/>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
+        <div>@Html.ActionLink("Back to Job Listings", "Index")</div>
     </p>
 </body>
 </html>

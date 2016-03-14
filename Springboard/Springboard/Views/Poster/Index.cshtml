@@ -40,11 +40,17 @@
                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
                 </div><!--/span-->
                 <div class="col-xs-3">
-                    <button style="margin:1em;" type="button" class="btn btn-primary">View Applicants</button>
+                    <form method="get" action="">
+                        <input type="submit" class="btn btn-primary" value="View Applicants" />
+                    </form>
                     <br />
-                    @Html.ActionLink("Create New Job Posting", "Create", new { @class = "btn btn-primary" })
-                    <br />
-                    <button style="margin:1em;" type="button" class="btn btn-primary">Edit Profile</button>
+                    <form method="get" action="/Poster/Create">
+                        <input type="submit" class="btn btn-primary" value="Create New Job Posting" />
+                    </form>
+                    <br/>
+                    <form method="get" action="">
+                        <input type="submit" class="btn btn-primary" value="Edit Profile" />
+                    </form>
                 </div><!--/span-->
             </div>
             <div class="row">
