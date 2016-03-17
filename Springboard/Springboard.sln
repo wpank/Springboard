@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Springboard", "Springboard\Springboard.csproj", "{4E7AA823-9EA3-4664-AEBD-A974D0814252}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KDTree", "KDTree\KDTree.csproj", "{33A00A90-C02E-474B-A8C0-3B0559873EA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4E7AA823-9EA3-4664-AEBD-A974D0814252}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E7AA823-9EA3-4664-AEBD-A974D0814252}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E7AA823-9EA3-4664-AEBD-A974D0814252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A00A90-C02E-474B-A8C0-3B0559873EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A00A90-C02E-474B-A8C0-3B0559873EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A00A90-C02E-474B-A8C0-3B0559873EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A00A90-C02E-474B-A8C0-3B0559873EA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
