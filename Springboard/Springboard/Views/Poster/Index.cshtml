@@ -9,7 +9,8 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="@Url.Content("~/Content/index.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Poster/index.css")" rel="stylesheet" type="text/css" />
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -31,7 +32,7 @@
         <div class="row row-offcanvas row-offcanvas-right">
             <div class="row">
                 <div class="col-xs-3">
-                    <img src="~/Content/default_company_logo.png" height="190" width="180">
+                    <img id="profPic" src="~/Content/default_company_logo.png" height="190" width="180">
                     <p> <strong> @Html.DisplayNameFor(model => model.User.FirstName) </strong><p>
                         <hr />
                 </div><!--/span-->
