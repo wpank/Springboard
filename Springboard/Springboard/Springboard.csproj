@@ -437,6 +437,12 @@
   <ItemGroup>
     <Folder Include="Content\Images\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KDTree\KDTree.csproj">
+      <Project>{33a00a90-c02e-474b-a8c0-3b0559873ea0}</Project>
+      <Name>KDTree</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

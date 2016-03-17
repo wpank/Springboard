@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Springboard.Models;
+using Microsoft.AspNet.Identity;
+using KDTree;
 
 namespace Springboard.Controllers
 {
@@ -17,6 +19,87 @@ namespace Springboard.Controllers
         // GET: JobsPage
         public ActionResult Index()
         {
+            string id = User.Identity.GetUserId();
+            var user = (from s in db.Users
+                        where s.Id == id
+                        select s).FirstOrDefault();
+            if (user != null)
+            {
+                if (user.Role == Role.Seeker &&
+                 user.SeekerAccount != null)
+                {
+                    SeekerAccount account = user.SeekerAccount;
+                    if (account.CultureId != null &&
+                        account.SkillRequirementId != null)
+                    {
+                        Culture culture = (from s in db.Cultures
+                                           where s.Id == account.CultureId
+                                           select s).FirstOrDefault();
+
+                        SkillRequirement skill = (from sk in db.SkillRequirements
+                                                  where sk.Id == account.SkillRequirementId
+                                                  select sk).FirstOrDefault();
+
+                        List<JobPosting> jobs = (from j in db.JobPostings
+                                                 where j.Culture != null &&
+                                                 j.SkillRequirement != null
+                                                 select j).ToList();
+
+                        int cultureSize = culture.MapSize;
+                        double[] cultureMap = culture.Map;
+
+                        int skillSize = skill.MapSize;
+                        double[] skillMap = skill.Map;
+
+                        KDTree<JobPosting> cultureTree = new KDTree<JobPosting>(cultureSize);
+                        KDTree<JobPosting> skillTree = new KDTree<JobPosting>(skillSize);
+
+                        foreach(JobPosting job in jobs)
+                        {
+                            Culture jobCulture = (from c in db.Cultures
+                                              where c.Id == job.CultureId
+                                              select c).FirstOrDefault();
+                            if (culture == null)
+                                continue;
+
+                            cultureTree.AddPoint(jobCulture.Map, job);
+                        }
+                
+                        List<JobPosting> results = new List<JobPosting>();
+
+                        var closest = cultureTree.NearestNeighbors(cultureMap, 5);
+                        for (; closest.MoveNext();)
+                        {
+                            SkillRequirement jobSkill = (from js in db.SkillRequirements
+                                                         where js.Id == closest.Current.SkillRequirementId
+                                                         select js).FirstOrDefault();
+                            if (jobSkill == null) continue;
+                            if(closest.CurrentDistance < 500)
+                                skillTree.AddPoint(jobSkill.Map, closest.Current);
+                        }
+
+                        var sorted = skillTree.NearestNeighbors(skillMap, 5);
+                        for (; sorted.MoveNext();)
+                        {
+                            results.Add(sorted.Current);
+                        }
+
+                        return View(results);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Seeker");
+                    }
+                }
+                else
+                {
+                    //POSTER
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var jobPostings = db.JobPostings.Include(j => j.Culture).Include(j => j.SkillRequirement).Include(j => j.User);
             return View(jobPostings.ToList());
         }

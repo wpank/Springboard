@@ -5,7 +5,7 @@ namespace Springboard.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
+    using System.Linq;
     public partial class SkillRequirement
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -60,5 +60,40 @@ namespace Springboard.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SeekerAccount> SeekerAccounts { get; set; }
+
+        public int MapSize
+        {
+            get
+            {
+                return Convert.ToInt16((from s in this.GetType().GetProperties()
+                                        where s.PropertyType.Equals(typeof(int?))
+                                        select s).Count());
+            }
+        }
+
+        public double[] Map
+        {
+            get
+            {
+                int size = MapSize;
+                List<double> listMap = new List<double>();
+                foreach (var prop in this.GetType().GetProperties())
+                {
+                    if (prop.PropertyType.Equals(typeof(int?)))
+                    {
+                        object val = prop.GetValue(this);
+                        if (val != null)
+                        {
+                            listMap.Add((int)val);
+                        }
+                        else
+                        {
+                            listMap.Add(size);
+                        }
+                    }
+                }
+                return listMap.ToArray();
+            }
+        }
     }
 }

@@ -5,7 +5,7 @@ namespace Springboard.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
+    using System.Linq;
     [Table("Culture")]
     public partial class Culture
     {
@@ -66,5 +66,31 @@ namespace Springboard.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SeekerAccount> SeekerAccounts { get; set; }
+
+        public short MapSize
+        {
+            get
+            {
+                return Convert.ToInt16((from s in this.GetType().GetProperties()
+                        where s.PropertyType.Equals(typeof(int))
+                        select s).Count());
+            }
+        }
+
+        public double[] Map
+        {
+            get
+            {
+                List<double> listMap = new List<double>();
+                foreach(var prop in this.GetType().GetProperties())
+                {
+                    if (prop.PropertyType.Equals(typeof(int)))
+                    {
+                        listMap.Add((int)prop.GetValue(this));
+                    }
+                }
+                return listMap.ToArray();
+            }
+        }
     }
 }
