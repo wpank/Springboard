@@ -1,0 +1,5 @@
+﻿@model IEnumerable<Springboard.Models.JobPosting>
+
+@foreach (var item in Model) {
+    @Html.Action("JobPartialView", new { Model = item });
+}

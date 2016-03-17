@@ -391,6 +391,9 @@
     <Content Include="Views\Skills\SkillDetailsPartial.cshtml" />
     <Content Include="Views\Application\CurrentSeekerApplications.cshtml" />
     <Content Include="Views\Poster\Details.cshtml" />
+    <Content Include="Views\JobsPage\JobPartialView.cshtml" />
+    <Content Include="Views\JobsPage\JobListPartialView.cshtml" />
+    <Content Include="Views\JobsPage\IndexJobView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">

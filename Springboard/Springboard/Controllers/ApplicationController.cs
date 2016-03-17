@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity.Owin;
 using Springboard.Models;
 using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
 
 namespace Springboard.Controllers
 {
@@ -42,19 +43,37 @@ namespace Springboard.Controllers
         {
             ApplicationDbContext context = new ApplicationDbContext();
             String id = User.Identity.GetUserId();
-            var seeker = from s in context.Applications where s.UserId == id select s;
+            var seeker = (from s in context.Applications where s.UserId == id select s).ToList();
             
             return PartialView("CurrentSeekerApplications", seeker);
         }
 
-        public ActionResult PosterApplication()
+        public ActionResult JobPostingApplication(Guid posterId)
         {
             ApplicationDbContext context = new ApplicationDbContext();
-
-            String posterId = User.Identity.GetUserId();
-            //posterId needs to be the JobPostingId, NOT the User ID to match. Not sure how to access this
-            var poster = from s in context.Applications where s.JobPostingId.Equals(posterId) select s;
+            List<Application> poster = (from s in context.Applications
+                                        where s.JobPostingId != null &&
+                                        s.JobPostingId == posterId
+                                        select s).ToList();
             return PartialView("CurrentSeekerApplications", poster);
+        }
+
+        public async Task<ActionResult> Apply(Guid Id)
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            String id = User.Identity.GetUserId();
+            Application app = new Application
+            {
+                DateOpen = DateTime.Now,
+                Id = Guid.NewGuid(),
+                JobPostingId = Id,
+                Resolved = false,
+                UserId = id
+            };
+            context.Applications.Add(app);
+            await context.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Seeker");
         }
     }
 }

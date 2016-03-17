@@ -155,24 +155,7 @@ $('document').ready(function(){
                     <div class="list-item">
                         @foreach (var thing in Model)
                         {
-
-                            <div class="container">
-                                <div class="row">
-                                    <div style="border-radius: 25px;border: 2px solid #A9A9A9;padding: 20px; margin-top: 5px; margin-bottom: 5px;" class="col-md-10">
-                                        <!--<p style="float:right" class="date"></p>-->
-                                        <form method="get" action="/Application/CurrentSeekerApplications">
-                                            <input type="submit" style="float:right;" class="btn btn-primary" value="Apply" />
-                                        </form>
-                                        <p class="title">
-                                            @Html.ActionLink(thing.JobTitle, "Details", new { id = thing.Id })
-                                            <!--@Html.DisplayFor(modelItem => thing.JobTitle)-->
-                                        </p>
-                                        <p class="desc">
-                                            @Html.DisplayFor(modelItem => thing.JobDescription)
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            @Html.Action("IndexJobView", thing)
                         }
                     </div>
 

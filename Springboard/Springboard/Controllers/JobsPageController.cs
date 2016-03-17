@@ -91,9 +91,12 @@ namespace Springboard.Controllers
                         return RedirectToAction("Index", "Seeker");
                     }
                 }
-                else
+                else if (user.Role == Role.Poster)
                 {
-                    //POSTER
+                    var jobs = (from j in db.JobPostings
+                               where j.UserId.Equals(user.Id)
+                               select j).ToList();
+                    return View("JobListPartialView", jobs);
                 }
             }
             else
@@ -102,6 +105,16 @@ namespace Springboard.Controllers
             }
             var jobPostings = db.JobPostings.Include(j => j.Culture).Include(j => j.SkillRequirement).Include(j => j.User);
             return View(jobPostings.ToList());
+        }
+
+        public ActionResult JobPartialView(JobPosting Model)
+        {
+            return PartialView("JobPartialView", Model);
+        }
+
+        public ActionResult IndexJobView(JobPosting Model)
+        {
+            return PartialView("IndexJobView", Model);
         }
 
         // GET: JobsPage/Details/5

@@ -1,0 +1,17 @@
+﻿@model Springboard.Models.JobPosting
+
+<div class="container">
+    <div class="row">
+        <div style="border-radius: 25px;border: 2px solid #A9A9A9;padding: 20px; margin-top: 5px; margin-bottom: 5px;" class="col-md-10">
+            <!--<p style="float:right" class="date"></p>-->
+            @Html.ActionLink("Apply", "Apply", "Application", new { Id = Model.Id }, null)
+            <p class="title">
+                @Html.ActionLink(Model.JobTitle, "Details", new { Id = Model.Id })
+                <!--@Html.DisplayFor(modelItem => Model.JobTitle)-->
+            </p>
+            <p class="desc">
+                @Html.DisplayFor(modelItem => Model.JobDescription)
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model Springboard.Models.JobPosting
+
+<div>
+    <h4>JobPosting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+
+        <dt>
+            Applicants
+        </dt>
+
+        <dd>
+            @Html.Action("JobPostingApplication", "Application", new { posterId = Model.Id });
+        </dd>
+
+    </dl>
+</div>
