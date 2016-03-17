@@ -1,5 +1,5 @@
 ﻿@model Springboard.Models.JobPosting
-
+<link href="@Url.Content("~/Content/index.css")" rel="stylesheet" type="text/css" />
 <div>
     <h4>JobPosting</h4>
     <hr />
@@ -27,26 +27,31 @@
         <dd>
             @Html.DisplayFor(model => model.JobDescription)
         </dd>
-        <dd>
-            @if(Model.CultureId == null)
-            {
-                @Html.Action("CultureCreatePartialJobPosting", "Culture", Model)
-            }
-            else
-            {
-                @Html.Action("CultureEditPartial", "Culture", new { CultureId = Model.CultureId })
-            }
-        </dd>
+        <div class="fluid-container">
+            <div class="row">
+                <dd class="col-xs-6">
 
-        <dd>
-            @if(Model.SkillRequirementId == null)
-            {
-                @Html.Action("SkillCreatePartialJobPosting", "Skills", Model)
-            }
-            else
-            {
-                @Html.Action("SkillDetailsPartial", "Skills", new { SkillRequirementId = Model.SkillRequirementId })
-            }
-        </dd>
-    </dl>
+                    @if (Model.CultureId == null)
+                    {
+                       @Html.Action("CultureCreatePartialJobPosting", "Culture", Model)
+                    }
+                    else
+                    {
+                       @Html.Action("CultureEditPartial", "Culture", new { CultureId = Model.CultureId })
+                    }
+                </dd>
+
+                <dd class="col-xs-6">
+                    @if (Model.SkillRequirementId == null)
+                    {
+                        @Html.Action("SkillCreatePartialJobPosting", "Skills", Model)
+                    }
+                    else
+                    {
+                            @Html.Action("SkillDetailsPartial", "Skills", new { SkillRequirementId = Model.SkillRequirementId })
+                    }
+                </dd>
+            </div>
+        </div>
+</dl>
 </div>

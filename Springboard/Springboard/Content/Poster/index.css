@@ -1,0 +1,12 @@
+﻿body {
+}
+
+#profPic{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius:3px;
+    animation:fly-in-from-left .5s 1s ease both;
+    transform-origin:top left;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-bottom:30px;
+    margin-left:34px;
+}
