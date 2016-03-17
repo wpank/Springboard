@@ -1,5 +1,0 @@
-C:\Users\will\Programming\AppSpring\Springboard\KDTree\bin\Debug\KDTree.dll
-C:\Users\will\Programming\AppSpring\Springboard\KDTree\bin\Debug\KDTree.pdb
-C:\Users\will\Programming\AppSpring\Springboard\KDTree\obj\Debug\KDTree.csprojResolveAssemblyReference.cache
-C:\Users\will\Programming\AppSpring\Springboard\KDTree\obj\Debug\KDTree.dll
-C:\Users\will\Programming\AppSpring\Springboard\KDTree\obj\Debug\KDTree.pdb
