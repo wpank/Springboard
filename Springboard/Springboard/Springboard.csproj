@@ -273,6 +273,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\default_company_logo.png" />
     <Content Include="Content\index.css" />
+    <Content Include="Content\JobsPage\index.css" />
+    <Content Include="Content\Seeker\index.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />

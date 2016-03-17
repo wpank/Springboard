@@ -4,22 +4,25 @@
 {
     if (Model.CultureId == null)
     {
-          @Html.Action("CultureCreatePartialSeekerAccount", "Culture", Model)
-         
+          <div class="col-xs-6">@Html.Action("CultureCreatePartialSeekerAccount", "Culture", Model)</div>
+
     }
     else
     {
-        @Html.Action("CultureEditPartial", "Culture", Model.CultureId)
+        <div class="col-xs-6">
+            @Html.Action("CultureEditPartial", "Culture", Model.CultureId)</div>
     }
 
     if (Model.SkillRequirementId == null)
     {
-        @Html.Action("SkillCreatePartialSeekerAccount", "Skills", Model)
+        <div class="col-xs-6">
+            @Html.Action("SkillCreatePartialSeekerAccount", "Skills", Model)</div>
     }
     else
     {
-        @Html.Action("SkillDetailsPartial", "Skills", Model.SkillRequirementId);
-    }
+        <div class="col-xs-6">
+            @Html.Action("SkillDetailsPartial", "Skills", Model.SkillRequirementId);</div>
+            }
 
-    @Html.Action("SeekerApplication", "Application");
-}
+            @Html.Action("SeekerApplication", "Application");
+            }
