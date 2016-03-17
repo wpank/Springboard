@@ -2,6 +2,8 @@
     background-color:antiquewhite;
 }
 
+
+
 .leftBar{
     background-color: white;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -15,4 +17,13 @@
 
 #amount{
     width:140px;
+}
+
+.list-item{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius:3px;
+    animation:fly-in-from-left .5s 1s ease both;
+    transform-origin:top left;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color:white;
 }

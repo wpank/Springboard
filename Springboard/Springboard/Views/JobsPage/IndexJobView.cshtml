@@ -1,8 +1,10 @@
 ﻿@model Springboard.Models.JobPosting
 
+
+<link href="@Url.Content("~/Content/JobsPage/index.css")" rel="stylesheet" type="text/css" />
 <div class="container">
     <div class="row">
-        <div style="border-radius: 25px;border: 2px solid #A9A9A9;padding: 20px; margin-top: 5px; margin-bottom: 5px;" class="col-md-10">
+        <div style="border-radius: 25px;border: 2px solid #A9A9A9;padding: 20px; margin-top: 5px; margin-bottom: 5px;" class="col-md-10 list-item">
             <!--<p style="float:right" class="date"></p>-->
             @Html.ActionLink("Apply", "Apply", "Application", new { Id = Model.Id }, null)
             <p class="title">
