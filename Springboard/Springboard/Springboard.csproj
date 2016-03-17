@@ -382,7 +382,6 @@
     <Content Include="Views\JobsPage\Index.cshtml" />
     <Content Include="Views\Poster\Create.cshtml" />
     <Content Include="Views\Poster\Delete.cshtml" />
-    <Content Include="Views\Poster\Details.cshtml" />
     <Content Include="Views\Poster\Edit.cshtml" />
     <Content Include="Views\Poster\Index.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
@@ -391,6 +390,7 @@
     <Content Include="Views\Skills\SkillCreatePartial.cshtml" />
     <Content Include="Views\Skills\SkillDetailsPartial.cshtml" />
     <Content Include="Views\Application\CurrentSeekerApplications.cshtml" />
+    <Content Include="Views\Poster\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602230054551_Initial.resx">

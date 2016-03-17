@@ -35,6 +35,31 @@ namespace Springboard.Controllers
             return PartialView("SkillCreatePartial", viewModel);
         }
 
+        public ActionResult SkillCreatePartialJobPosting(JobPosting model)
+        {
+            SkillRequirement Skill = new SkillRequirement();
+            List<Trait> listItems = new List<Trait>();
+            foreach (var prop in from s in Skill.GetType().GetProperties() select s)
+            {
+                if (!prop.PropertyType.Equals(typeof(int?)))
+                    continue;
+                Trait item = new Trait
+                {
+                    DisplayName = prop.Name,
+                    PropertyName = prop.Name
+                };
+                listItems.Add(item);
+            }
+            SkillCreateViewModel viewModel = new SkillCreateViewModel
+            {
+                CreatorType = SkillCreatorType.JobPosting,
+                CreatorId = model.Id,
+                Traits = listItems
+            };
+
+            return PartialView("SkillCreatePartial", viewModel);
+        }
+
         [HttpPost]
         public async Task<ActionResult> SkillCreatePartial(SkillCreatePostModel result)
         {
@@ -68,10 +93,20 @@ namespace Springboard.Controllers
                         entry.Reference(e => e.SkillRequirement).CurrentValue = model;
                         await context.SaveChangesAsync();
 
-                        break;
+                        return RedirectToAction("Index", "Seeker", new { area = "" });
                     }
                 case (SkillCreatorType.JobPosting):
                     {
+                        JobPosting account = (from s in context.JobPostings
+                                                 where s.Id == result.CreatorId
+                                                 select s).FirstOrDefault();
+                        if (account == null) break;
+
+                        context.JobPostings.Attach(account);
+                        var entry = context.Entry(account);
+                        entry.Reference(e => e.SkillRequirement).CurrentValue = model;
+                        await context.SaveChangesAsync();
+
                         break;
                     }
                 default:
@@ -80,7 +115,7 @@ namespace Springboard.Controllers
                     }
             }
 
-            return RedirectToAction("Seeker/Index");
+            return null;
         }
 
         // GET: Skills

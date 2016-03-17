@@ -39,12 +39,13 @@ $(document).ready(function () {
             index++;
         });
 
-        $.post("Skills/SkillCreatePartial",
+        $.post("/Skills/SkillCreatePartial",
             {
                 CreatorType: "@Model.CreatorType",
                 CreatorId: "@Model.CreatorId",
                 Selection: Skill
             }, function () { });
+        return false;
     });
 })
     function serializeListItem(item, count)

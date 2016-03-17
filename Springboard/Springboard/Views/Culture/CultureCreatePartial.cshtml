@@ -41,12 +41,13 @@ $(document).ready(function () {
             index++;
         });
 
-        $.post("Culture/CultureCreatePartial",
+        $.post("/Culture/CultureCreatePartial",
             {
                 CreatorType: "@Model.CreatorType",
                 CreatorId: "@Model.CreatorId",
                 Selection: culture
             }, function () { });
+        return false;
     });
 })
     function serializeListItem(item, count)

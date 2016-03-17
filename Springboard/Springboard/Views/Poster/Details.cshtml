@@ -1,66 +1,52 @@
 ﻿@model Springboard.Models.JobPosting
 
-@{
-    Layout = null;
-}
+<div>
+    <h4>JobPosting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </dt>
 
-<!DOCTYPE html>
+        <dd>
+            @Html.DisplayFor(model => model.User.FirstName)
+        </dd>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>JobPosting</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Culture.Id)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Culture.Id)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.SkillRequirement.Id)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.SkillRequirement.Id)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.User.FirstName)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.User.FirstName)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.JobTitle)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.JobTitle)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.JobDescription)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.JobDescription)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+        <dd>
+            @if(Model.CultureId == null)
+            {
+                @Html.Action("CultureCreatePartialJobPosting", "Culture", Model)
+            }
+            else
+            {
+                @Html.Action("CultureEditPartial", "Culture", new { CultureId = Model.CultureId })
+            }
+        </dd>
+
+        <dd>
+            @if(Model.SkillRequirementId == null)
+            {
+                @Html.Action("SkillCreatePartialJobPosting", "Skills", Model)
+            }
+            else
+            {
+                @Html.Action("SkillDetailsPartial", "Skills", new { SkillRequirementId = Model.SkillRequirementId })
+            }
+        </dd>
+    </dl>
+</div>

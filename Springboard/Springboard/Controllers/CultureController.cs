@@ -36,6 +36,32 @@ namespace Springboard.Controllers
             return PartialView("CultureCreatePartial", viewModel);
         }
 
+        // GET: Culture
+        public ActionResult CultureCreatePartialJobPosting(JobPosting model)
+        {
+            Culture culture = new Culture();
+            List<Trait> listItems = new List<Trait>();
+            foreach (var prop in from s in culture.GetType().GetProperties() select s)
+            {
+                if (!prop.PropertyType.Equals(typeof(int)))
+                    continue;
+                Trait item = new Trait
+                {
+                    DisplayName = prop.Name,
+                    PropertyName = prop.Name
+                };
+                listItems.Add(item);
+            }
+            CultureCreateViewModel viewModel = new CultureCreateViewModel
+            {
+                CreatorType = CultureCreatorType.JobPosting,
+                CreatorId = model.Id,
+                Traits = listItems
+            };
+
+            return PartialView("CultureCreatePartial", viewModel);
+        }
+
         [HttpPost]
         public async Task<ActionResult> CultureCreatePartial(CultureCreatePostModel result)
         {
@@ -69,10 +95,20 @@ namespace Springboard.Controllers
                         entry.Reference(e => e.Culture).CurrentValue = model;
                         await context.SaveChangesAsync();
 
-                        break;
+                        return RedirectToAction("Index", "Seeker", new { area = "" });
                     }
                 case (CultureCreatorType.JobPosting):
                 {
+                    JobPosting account = (from s in context.JobPostings
+                                                where s.Id == result.CreatorId
+                                                select s).FirstOrDefault();
+                    if (account == null) break;
+
+                    context.JobPostings.Attach(account);
+                    var entry = context.Entry(account);
+                    entry.Reference(e => e.Culture).CurrentValue = model;
+                    await context.SaveChangesAsync();
+
                     break;
                 }
                 default:
@@ -81,7 +117,7 @@ namespace Springboard.Controllers
                 }
             }
 
-            return RedirectToAction("Seeker/Index");
+            return null;
         }
 
         // GET: Culture

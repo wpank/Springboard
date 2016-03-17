@@ -30,12 +30,15 @@ namespace Springboard.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Applications { get; set; }
 
+        [Display(Name = "Poster")]
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
 
+        [Display(Name = "Culture")]
         public Guid? CultureId { get; set; }
         public virtual Culture Culture { get; set; }
 
+        [Display(Name = "Skills")]
         public Guid? SkillRequirementId { get; set; }
         public virtual SkillRequirement SkillRequirement { get; set; }
     }

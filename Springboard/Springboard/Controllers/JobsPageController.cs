@@ -57,7 +57,7 @@ namespace Springboard.Controllers
                 jobPosting.Id = Guid.NewGuid();
                 db.JobPostings.Add(jobPosting);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit");
             }
 
             ViewBag.CultureId = new SelectList(db.Cultures, "Id", "Id", jobPosting.CultureId);
