@@ -1,17 +1,26 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<link href="@Url.Content("~/Content/contact.css")" rel="stylesheet" type="text/css" />
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-6 contactInfo">
+        
+    <div id="title"><h2>@ViewBag.Title</h2></div>
 
-<address>
-    Depaul University<br />
-    Chicago, IL 60605<br />
-    <abbr title="Phone">P:</abbr>
-    888.123.4567
-</address>
+    <address id="contactAddress">
+        Depaul University<br />
+        Chicago, IL 60605<br />
+        888.123.4567
+    </address>
+    </div>
+        <div class="col-md-6 backgroundImage"></div>
+    </div>
+</div>
 
+<br/>
+<br/>
 <address>
-    <strong>Support:</strong>   <a href="mailto:Legit@email.com">Legit@email.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:SoLegit@example.com">SoLegit@example.com</a>
+    <strong>Support:</strong>   <a href="mailto:springboard@springboard.com">SpringboardSupport@springboard.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:SoLegit@example.com">SpringboardMarketing@springboard.com</a>
 </address>

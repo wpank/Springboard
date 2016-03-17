@@ -1,0 +1,56 @@
+﻿body {
+    background-color: antiquewhite;
+}
+
+div{
+    
+}
+
+.backgroundImage{
+    
+    border-radius:3px;
+    background-image: url("../../Content/Images/contact.jpg");
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    height: 300px;
+    
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.container-fluid{
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius:3px;
+    animation:fly-in-from-left .5s 1s ease both;
+    transform-origin:top left;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+h2{
+}
+
+#title{
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    padding:10px;
+    margin-left:-1px;
+    margin-right:-15px;
+    background-color:#7986cb;
+    border-radius:2px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    color:white;
+    font-size:200%;
+
+}
+.contactInfo{
+
+}
+
+#contactAddress{
+    background-color:white;
+    margin:10px;
+    text-align:center;
+    font-size:300%;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
