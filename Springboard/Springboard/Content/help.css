@@ -1,0 +1,55 @@
+﻿body {
+    background-color:antiquewhite;
+}
+
+#titleSlogan{
+        background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius:5px;
+    animation:fly-in-from-left .5s 1s ease both;
+    transform-origin:top left;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin:20px;
+    margin:10px;
+    padding:10px
+}
+
+#titleSlogan h2{
+    margin:-10px;
+    padding:20px;
+
+    background-color: #7986cb;
+    color:white;
+    
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.question{
+
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius:5px;
+    animation:fly-in-from-left .5s 1s ease both;
+    transform-origin:top left;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin:20px;
+}
+
+.question h3, p{
+    margin:10px;
+    padding:10px;
+}
+
+.question h3{
+    margin:0px;
+    padding:30px;
+
+    background-color: #7986cb;
+    color:white;
+    
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.question p{
+    font-size: 150%;
+}
+
