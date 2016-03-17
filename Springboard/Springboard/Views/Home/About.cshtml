@@ -1,10 +1,19 @@
 ﻿@{
     ViewBag.Title = "About Us";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>Springboard. Proffessional and consistent job matching service.</h3>
+<link href="@Url.Content("~/Content/about.css")" rel="stylesheet" type="text/css" />
 
-
-<p>SpringBoard connects employers with job seekers by matching skills, workstyle and experience through work personality tests.</p>
-<p>Once you set your preferences as a job seeker, matched jobs will be listed for application. For employers, Springboard is a great way to find qualified employees that are garaunteed to love working for your company. </p>
-
+<div id="about">
+    <div class="fluid-container">
+        <div class="row"><h2 class="col-md-12">@ViewBag.Title</h2></div>
+        <br />
+        <br />
+        
+        <h3>Springboard. Professional and consistent job matching service.</h3>
+        <br />
+        <br />
+        <p>SpringBoard connects employers with job seekers by matching skills, workstyle and experience through work personality tests.</p>
+        <p>Once you set your preferences as a job seeker, matched jobs will be listed for application. </p>
+        <p>For employers, Springboard is a great way to find qualified employees that are garaunteed to love working for your company. </p>
+   </div>
+</div>
